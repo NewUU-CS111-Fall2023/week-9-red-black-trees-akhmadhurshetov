@@ -1,20 +1,19 @@
 /*
  * Author: Axmad Xurshetov
  * Date: 13.12.2023
- * Name: task 1
+ * Name: task 6
  */
-#ifndef TASK_1_H
-#define TASK_1_H
+#ifndef TASK_6_H
+#define TASK_6_H
 
 #include <iostream>
 #include <vector>
 
 struct Node {
     int data;
-    Node* left;
-    Node* right;
-    Node* parent;
+    std::vector<Node*> children;
     bool color; 
+};
 
 class RedBlackTree {
 public:
@@ -22,9 +21,9 @@ public:
 
     RedBlackTree() : root(nullptr) {}
 
-    void Insert(int x);
-    void printTreeRecursively(Node* node, std::string colorStr);
-    void printTree();
+    void Insert(int parent, int child);
+    int BlackHeight(Node* node);
+    void printChildrenCount();
 };
 
 #endif

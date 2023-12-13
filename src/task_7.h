@@ -1,10 +1,10 @@
 /*
  * Author: Axmad Xurshetov
  * Date: 13.12.2023
- * Name: task 1
+ * Name: task 7
  */
-#ifndef TASK_1_H
-#define TASK_1_H
+#ifndef TASK_7_H
+#define TASK_7_H
 
 #include <iostream>
 #include <vector>
@@ -15,6 +15,7 @@ struct Node {
     Node* right;
     Node* parent;
     bool color; 
+};
 
 class RedBlackTree {
 public:
@@ -25,6 +26,13 @@ public:
     void Insert(int x);
     void printTreeRecursively(Node* node, std::string colorStr);
     void printTree();
+    void leftRotate(Node* x);
+    void rightRotate(Node* x);
+    void deleteNode(int x);
+    void insertFix(Node* x);
+    void deleteFix(Node* x);
+    Node* search(int x);
+    int height(Node* node);
 };
 
 #endif
